@@ -14,6 +14,48 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## Description
+  ${data.description}
+  
+  ## Table of Contents 
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  
+  ## Installation
+  ${data.installation}
+  
+  ## Usage
+  ${data.use}
+  
+  Website: ${data.link}
+
+  ## Credits
+  
+  ${data.contribute}
+  
+  ## License
+  
+  ${data.license}
+  
+  
+  ## Badges
+  
+  
+  
+  ## How to Contribute
+  
+  If you would like to contribute to my project, I have listed my repository URL and email below.  Please reach out with any questions.
+  
+  Name: ${data.name}
+  Repository: ${data.repo}
+  E-mail: ${data.email}
+  
+  ## Tests
+  
+  ${data.tests}
 `;
 }
 

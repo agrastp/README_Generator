@@ -1,61 +1,92 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
+  ${data.badge}
   ${data.description}
+
+
+  You can visit the deployed site here: ${data.link}
   
+
+----------------------
   ## Table of Contents 
   
+  - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
-  
+  - [Tests](#tests)
+  - [Contribute](#contribute)
+  - [Contact](#contact)
+
+
+
+---------------------- 
   ## Installation
   ${data.installation}
   
+
+
+
+----------------------
   ## Usage
   ${data.use}
   
   Website: ${data.link}
 
+
+----------------------
   ## Credits
   
   ${data.contribute}
   
+
+
+
+----------------------
   ## License
   
   ${data.license}
   
+
+
+
+
+
+----------------------
+  ## Tests
   
-  ## Badges
+  ${data.tests}
   
+
+
+
+
+
+----------------------
+  ## Contribute
   
+  To contribute to this application, create a pull request.
+  Here are the steps:
+  1. Fork the repo
+  2. Create a feature branch (git checkout -b NAME-HERE)
+  3. Commit your new feature (git commit -m 'Add some feature')
+  4. Push your branch (git push)
+  5. Create a new Pull Request
+
+  Your code will be reviewed and merged.
   
-  ## How to Contribute
-  
-  If you would like to contribute to my project, I have listed my repository URL and email below.  Please reach out with any questions.
-  
+-----------------------
+  ##Contact 
   Name: ${data.name}
   Repository: ${data.repo}
   E-mail: ${data.email}
   
-  ## Tests
   
-  ${data.tests}
 `;
 }
 

@@ -4,7 +4,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
-  ${data.badge}
+  ${data.renderLicenseBadge}
   ${data.description}
 
 
@@ -27,7 +27,7 @@ function generateMarkdown(data) {
 
 ---------------------- 
   ## Installation
-  ${data.installation}
+  ${data.install}
   
 
 
@@ -60,7 +60,7 @@ function generateMarkdown(data) {
 ----------------------
   ## Tests
   
-  ${data.tests}
+  ${data.test}
   
 
 

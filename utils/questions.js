@@ -71,7 +71,5 @@ const questions = [
     ]
 
 
-    module.exports = {
-        questions: questions,
-      };
+    module.exports = questions;
     

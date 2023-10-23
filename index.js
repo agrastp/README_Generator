@@ -1,23 +1,24 @@
 //Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const util = require("util");
 
 //Variables to connect to modules to application
 const generateMarkdown = require('./utils/generateMarkdown');
-// const licenseBadege = require('./utils/badges');
 const questions = require('./utils/questions');
+const renderLicenseBadge = require("./utils/badges");
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) { }
-//Do I need to have a separate function to write it or can I include it in the init function?
+
+const writeFileAsync = util.promisify(fs.writeFile);
+
 
 // Function to initialize app and write README file
-function init() { 
+async function init() { 
     try {
-        const answers = inquirer.prompt(questions);
+        const answers = await inquirer.prompt(questions);
         let answerData = generateMarkdown(answers);
-        // include the licsense badge variable
-        fs.writeFile('new-README.md', answerData)
+        answers.renderLicenseBadge = renderLicenseBadge(answers.license);
+        await writeFileAsync('new-README.md', answerData);
     }
     catch(err){
         throw err;

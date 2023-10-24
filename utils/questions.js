@@ -1,3 +1,5 @@
+//Questions that are presented in the terminal when program starts
+
 const questions = [
         {
             type: 'input',
@@ -29,9 +31,9 @@ const questions = [
             message: 'Select the license you used for this project.',
             name: 'license',
             choices: [
-                "GNU AGPLv3",
-                "GNU GPLv3",
-                "GNU LGPLv3",
+                "GNU AGPL v3",
+                "GNU GPL v3",
+                "GNU LGPL v3",
                 "Mozilla",
                 "MIT",
                 "Apache",
@@ -51,7 +53,12 @@ const questions = [
         {
             type: 'input',
             message: 'List your contributors and resources you used for your project.',
-            name: 'contribute',
+            name: 'credits',
+        },
+        {
+            type: 'input',
+            message: 'List any steps to how someone can further contribute to your project.',
+            name: 'contributing',
         },
         {
             type: 'input',

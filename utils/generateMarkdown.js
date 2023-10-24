@@ -1,17 +1,41 @@
+// Returns a license badge based on which license is passed in
 
-// TODO: Create a function to generate markdown for README
+function renderLicenseBadge(value) {
+  if (value === "GNU AGPL v3") {
+      return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)"
+  } else if (value === "GNU GPL v3") {
+      return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+  } else if (value === "GNU LGPL v3") {
+      return "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)";
+  } else if (value === "Mozilla") {
+      return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+  } else if (value === "MIT") {
+      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+  } else if (value === "Apache") {
+      return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+  } else if (value === "Boost") {
+      return "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
+  } else {
+    value === null;
+  } return "";
+}
+
+//Generates the README file once data is passed in and function init is initiated
+
 function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
-  ${data.renderLicenseBadge}
-  ${data.description}
+  
+  ${renderLicenseBadge(data.license)} <br>
+  ${data.description}<br>
 
 
   You can visit the deployed site here: ${data.link}
   
 
 ----------------------
+
   ## Table of Contents 
   
   - [Description](#description)
@@ -20,12 +44,13 @@ function generateMarkdown(data) {
   - [Credits](#credits)
   - [License](#license)
   - [Tests](#tests)
-  - [Contribute](#contribute)
-  - [Contact](#contact)
+  - [Contributing](#contributing)
+  - [Questions](#questions)
 
 
 
 ---------------------- 
+
   ## Installation
   ${data.install}
   
@@ -33,24 +58,27 @@ function generateMarkdown(data) {
 
 
 ----------------------
+
   ## Usage
-  ${data.use}
+  ${data.use}<br>
   
   Website: ${data.link}
 
 
 ----------------------
+
   ## Credits
   
-  ${data.contribute}
+  ${data.credits}
   
 
 
 
 ----------------------
+
   ## License
   
-  ${data.license}
+  This project is licensed under the terms of the ${data.license} license.  Click the badge at the top of the README to get more information about the license.
   
 
 
@@ -58,6 +86,7 @@ function generateMarkdown(data) {
 
 
 ----------------------
+
   ## Tests
   
   ${data.test}
@@ -68,22 +97,18 @@ function generateMarkdown(data) {
 
 
 ----------------------
-  ## Contribute
-  
-  To contribute to this application, create a pull request.
-  Here are the steps:
-  1. Fork the repo
-  2. Create a feature branch (git checkout -b NAME-HERE)
-  3. Commit your new feature (git commit -m 'Add some feature')
-  4. Push your branch (git push)
-  5. Create a new Pull Request
 
-  Your code will be reviewed and merged.
+  ## Contributing
+  
+  ${data.contributing}
   
 -----------------------
-  ##Contact 
-  Name: ${data.name}
-  Repository: ${data.repo}
+
+  ## Questions
+
+  Name: ${data.name}<br>
+  Repository: ${data.repo}<br>
+  Clone: ${data.clone}<br>
   E-mail: ${data.email}
   
   
